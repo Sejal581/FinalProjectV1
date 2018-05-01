@@ -12,8 +12,8 @@ $('#quiz').quiz({
         'Looping in Resource Manager'
       ],
       'correctIndex': 0,
-      'correctResponse': 'Great Job!',
-      'incorrectResponse': 'Pay closer attention at our meetings!'
+      'correctResponse': 'Correct Answer. Great Job!',
+      'incorrectResponse': 'Wrong Answer, your status should always be to date. Pay closer attention at our meetings!'
     },
     {
       'q': 'What should be done before you leave everyday',
@@ -23,8 +23,8 @@ $('#quiz').quiz({
         'Reviewing dashboard to ensure all tasks for the day are completed.'
       ],
       'correctIndex': 2,
-      'correctResponse': 'Correct!',
-      'incorrectResponse': 'oh no!'
+      'correctResponse': 'Correct Answer!',
+      'incorrectResponse': 'oh no! Wrong Answer, you should always review your dashboard to ensure all work is completed'
     },
     {
       'q': 'When receving a new task, what should you do?',
@@ -33,8 +33,8 @@ $('#quiz').quiz({
         'Mark task started'
       ],
       'correctIndex': 1,
-      'correctResponse': 'You\'re a genius!',
-      'incorrectResponse': 'Good Try'
+      'correctResponse': 'You\'re a genius! Correct Answer',
+      'incorrectResponse': 'Good Try, you should always mark your tasks started'
     },
     {
       'q': 'Should proddev and staging files always be sync\'ed?',
@@ -44,8 +44,8 @@ $('#quiz').quiz({
         'No'
       ],
       'correctIndex': 0,
-      'correctResponse': 'Correct!',
-      'incorrectResponse': 'Wrong!'
+      'correctResponse': 'Correct Answerr!',
+      'incorrectResponse': 'Wrong! Proddev and Staging should always match'
     }
   ],
   finishCallback: () => {
@@ -85,3 +85,5 @@ const base = Airtable.base('appJpzI0JJrgMV8rq');
 		// TODO: print out to the HTML page that quiz has been submitted...
 	});
  })
+const form = document.querySelector("js-quiz-submit").value = "";
+form.reset();
