@@ -59,11 +59,6 @@ $('#quiz').quiz({
 
  $(".collapse-card").paperCollapse();
 
-$(document).ready(function(){
-    $(".js-submit").click(function(){
-        $(".js-quiz-submit").hide();
-    });
-});
 
 const Airtable = require('airtable')
 Airtable.configure({
@@ -85,5 +80,47 @@ const base = Airtable.base('appJpzI0JJrgMV8rq');
 		// TODO: print out to the HTML page that quiz has been submitted...
 	});
  })
-const form = document.querySelector("js-quiz-submit").value = "";
-form.reset();
+
+
+// $(document).ready(function(){
+ //   $(".js-submit").click(function(){
+  //      $(".js-quiz-submit").hide();
+      //   console.log('this is hidden')
+   // });
+//});
+
+
+const $name =$('.js-name');
+const $submit =$('.js-submit');
+
+$name.on('keypress click', e => {
+  if (e.type === 'click') {
+    e.preventDefault();
+    const logName = $(e.target).val();
+    $(e.target).val('');
+    console.log('this is cleared on click of input field', logName);
+
+  }
+
+})
+
+$submit.on('submit', e => {
+  if (e.type === 'click') {
+    e.preventDefault();
+    const logName2 = $(e.target).val();
+    $(e.target).val('');
+    console.log('this is cleared on click', logName2);
+
+  }
+
+})
+
+$name.on('keydown', e => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    const logName3 = $(e.target).val();
+    $(e.target).val('');
+      console.log('this is cleared on enter', logName3);
+      }
+
+})
